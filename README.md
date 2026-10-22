@@ -24,7 +24,6 @@ server/
 ## 启动
 
 ```powershell
-cd E:\Test_Management_Platform
 node server/index.js 8080          # 端口可省略，默认 8080
 ```
 
