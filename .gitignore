@@ -1,0 +1,27 @@
+# 依赖
+node_modules/
+
+# 运行期数据：账号口令哈希、SMTP 授权码、业务数据、快照备份（严禁入库）
+server/data/
+
+# 日志
+*.log
+!npm-debug.log*
+
+# 本地开发 / 调试脚本与截图（个人环境专用，不属于平台代码）
+_pwcli/
+_探勘记录/
+.playwright-cli/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时文件
+*.tmp
+*.bak
+*.bak-*
+*.swp

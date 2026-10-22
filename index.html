@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试任务执行平台</title>
+  <link rel="stylesheet" id="cssLink" href="style.css">
+  <script>
+    // 本地开发：带版本号加载，避免浏览器缓存旧文件
+    (function () {
+      var v = Date.now();
+      window.__assetVer = v;
+      document.getElementById('cssLink').href = 'style.css?v=' + v;
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    (function () {
+      var v = window.__assetVer || Date.now();
+      var files = ['data.js', 'xlsx.js', 'api.js', 'app.js'];
+      (function next(i) {
+        if (i >= files.length) return;
+        var s = document.createElement('script');
+        s.src = files[i] + '?v=' + v;
+        s.onload = function () { next(i + 1); };
+        document.body.appendChild(s);
+      })(0);
+    })();
+  </script>
+</body>
+</html>
